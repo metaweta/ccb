@@ -3159,8 +3159,11 @@ To define the syllepsis, we begin with a ``four-edged'' identity span and compos
 Because all these coherence laws hold in $\Span_2(T),$ it is a symmetric monoidal bicategory.
 
 \newcommand{\pb}[1]{\begin{tikzpicture}[dot/.style={fill,inner sep=1pt,circle}, scale=.2]
-  \foreach \x / \y [remember=\x as \lastx(initially 0), count=\n] in {#1}
+  \xdef\lastx{0}
+  \foreach \x / \y [count=\n] in {#1} {
     \draw[draw=\ifnum\y>0 black\else white\fi] (\lastx, 0) to[out=90,in=90,looseness=1.7] (\x, 0);
+    \xdef\lastx{\x}
+  }
   \foreach \x in {0,...,\n} \draw[black] (\x,0) node[dot]{};
 \end{tikzpicture}}
 
