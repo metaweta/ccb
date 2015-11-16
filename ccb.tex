@@ -1,11 +1,11 @@
-\documentclass{tac} 
+% AMSart style, 47 pp, PSTricks 2.60, PB-Diagram, TikZ/PGF
+\documentclass{amsart} 
 
 \usepackage{etex}
 \usepackage[all]{xy}
 \usepackage{pb-diagram}
 \usepackage{amsfonts, amssymb, amsmath}
 \usepackage{tikz}
-\usepackage{bussproofs}
 \usepackage{epsfig}
 \usepackage{hyperref}
 \usepackage{latexsym,url}
@@ -33,18 +33,6 @@
 electron/.style={postaction=decorate, decoration={markings, mark=at position 0.55 with {\arrow{triangle 45}}}}, photon/.style={decorate, decoration={coil, aspect=0}}
 }
 \definecolor{salmon}{rgb}{1,0.47,0.425}
-%\definecolor{purple}{rgb}{0.5,0,0.5}
-
-
-\textwidth = 6.5 in
-\textheight = 9 in
-\oddsidemargin = 0.0 in
-\evensidemargin = 0.0 in
-\topmargin = 0.0 in
-\headheight = 0.0 in
-\headsep = 0.0 in
-\parskip = 0.1in
-\parindent = 0.0in
 
 % theorem environments
 \newtheorem{thm}{Theorem}
@@ -379,15 +367,17 @@ electron/.style={postaction=decorate, decoration={markings, mark=at position 0.5
   \end{scope}
 }
 
-% Defining this here since I do not use tac.cls
-\newcommand{\pushright}[1]{#1}
-
-\def\endproof{\pushright{$\Box$}%\vrule width5pt height 5pt depth 0pt}%
+\def\endproof{\pushright{$\Box$ \vrule width5pt height 5pt depth 0pt}
 \penalty-700 \par\addvspace{\medskipamount}}
 % ``pushright'' is a command from tac.cls
 
 \title{Compact closed bicategories}
-\author{Michael Stay \\ \texttt{stay@google.com}}
+\author{Michael Stay}
+\email{stay@google.com}
+\address{MTV-46-2\\
+1600 Amphitheatre Pkwy\\
+Mountain View, CA\\
+94043, USA}
 \date{\today}
 
 \begin{document}
